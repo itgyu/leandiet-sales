@@ -1,0 +1,4 @@
+
+# Environment files with secrets
+sms-project/.env.local
+sms-project/.env.development.local
