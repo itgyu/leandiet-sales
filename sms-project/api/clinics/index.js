@@ -1,7 +1,4 @@
-import jwt from 'jsonwebtoken';
 import { clinics, FUNNEL_STAGES } from '../_shared/data.js';
-
-const JWT_SECRET = process.env.JWT_SECRET || 'leandiet-jwt-secret-key-2024';
 
 function verifyToken(req) {
   const authHeader = req.headers['authorization'];
@@ -9,7 +6,11 @@ function verifyToken(req) {
   if (!token) return null;
 
   try {
-    return jwt.verify(token, JWT_SECRET);
+    const payload = JSON.parse(Buffer.from(token, 'base64').toString('utf8'));
+    if (payload.exp && payload.exp < Math.floor(Date.now() / 1000)) {
+      return null;
+    }
+    return payload;
   } catch {
     return null;
   }

@@ -25,7 +25,7 @@ export const useAuthStore = create(
 
         try {
           
-          const response = await fetch(`${API_BASE}/api/auth/login`, {
+          const response = await fetch(`${API_BASE}/api/login`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -195,7 +195,7 @@ export const useAuthStore = create(
         set({ isValidating: true });
         
         try {
-          const response = await fetch(`${API_BASE}/api/auth/me`, {
+          const response = await fetch(`${API_BASE}/api/me`, {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,
@@ -258,7 +258,7 @@ export const useAuthStore = create(
         set({ isLoading: true });
 
         try {
-          const response = await fetch(`${API_BASE}/api/auth/me`, {
+          const response = await fetch(`${API_BASE}/api/me`, {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,
