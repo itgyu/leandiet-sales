@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import MainLayout from '../components/Layout/MainLayout.jsx';
 import { FUNNEL_STAGES, FUNNEL_ORDER, FUNNEL_COLORS, PRIORITY_LEVELS, PRIORITY_COLORS, REGIONS } from '../types/clinic.js';
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3001';
+const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 /**
  * 퍼널 통계 카드 컴포넌트

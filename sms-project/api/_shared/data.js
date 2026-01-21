@@ -1,0 +1,242 @@
+export const FUNNEL_STAGES = {
+  CONTACT: '컨택',
+  WONTANG_CONTRACT: '원탕계약완료',
+  LEANDIET_CONTRACT: '린다이어트계약완료',
+  REVENUE: '매출'
+};
+
+export const clinics = [
+  {
+    cid: 'clinic001',
+    clinicName: '강남 한의원',
+    directorName: '김한의',
+    phone: '02-1234-5678',
+    region: '서울',
+    priority: 'A',
+    funnelStage: FUNNEL_STAGES.REVENUE,
+    assignee: '이태규',
+    lastContactDate: '2025-01-15',
+    nextActionPlan: '월간 매출 리뷰 미팅',
+    nextActionDate: '2025-01-25',
+    history: [
+      { id: 'h1', date: '2024-10-01', content: '첫 컨택 - 관심 표명', author: '이태규' },
+      { id: 'h2', date: '2024-11-15', content: '원탕 계약 완료', author: '이태규' },
+      { id: 'h3', date: '2024-12-20', content: '린다이어트 계약 완료', author: '이태규' },
+      { id: 'h4', date: '2025-01-10', content: '첫 매출 발생 - 500만원', author: '이태규' }
+    ],
+    isLeanTarget: true,
+    hasManagementSession: true,
+    usesSooMembers: true,
+    hasOpeningSession: false,
+    createdAt: '2024-10-01T00:00:00.000Z',
+    updatedAt: '2025-01-15T00:00:00.000Z'
+  },
+  {
+    cid: 'clinic002',
+    clinicName: '서초 한의원',
+    directorName: '박원장',
+    phone: '02-2345-6789',
+    region: '서울',
+    priority: 'A',
+    funnelStage: FUNNEL_STAGES.LEANDIET_CONTRACT,
+    assignee: '조일녕',
+    lastContactDate: '2025-01-18',
+    nextActionPlan: '설치 일정 협의',
+    nextActionDate: '2025-01-22',
+    history: [
+      { id: 'h1', date: '2024-11-01', content: '첫 컨택', author: '조일녕' },
+      { id: 'h2', date: '2024-12-10', content: '원탕 계약', author: '조일녕' },
+      { id: 'h3', date: '2025-01-18', content: '린다이어트 계약 완료', author: '조일녕' }
+    ],
+    isLeanTarget: true,
+    hasManagementSession: true,
+    usesSooMembers: false,
+    hasOpeningSession: true,
+    createdAt: '2024-11-01T00:00:00.000Z',
+    updatedAt: '2025-01-18T00:00:00.000Z'
+  },
+  {
+    cid: 'clinic003',
+    clinicName: '부산 해운대 한의원',
+    directorName: '이원장',
+    phone: '051-1234-5678',
+    region: '부산',
+    priority: 'B',
+    funnelStage: FUNNEL_STAGES.WONTANG_CONTRACT,
+    assignee: '나종언',
+    lastContactDate: '2025-01-10',
+    nextActionPlan: '린다이어트 소개 미팅',
+    nextActionDate: '2025-01-20',
+    history: [
+      { id: 'h1', date: '2024-12-01', content: '첫 컨택 - 지인 소개', author: '나종언' },
+      { id: 'h2', date: '2025-01-05', content: '원탕 계약 완료', author: '나종언' }
+    ],
+    isLeanTarget: true,
+    hasManagementSession: false,
+    usesSooMembers: true,
+    hasOpeningSession: false,
+    createdAt: '2024-12-01T00:00:00.000Z',
+    updatedAt: '2025-01-10T00:00:00.000Z'
+  },
+  {
+    cid: 'clinic004',
+    clinicName: '대구 수성 한의원',
+    directorName: '최원장',
+    phone: '053-2345-6789',
+    region: '대구',
+    priority: 'B',
+    funnelStage: FUNNEL_STAGES.CONTACT,
+    assignee: '이태규',
+    lastContactDate: '2025-01-17',
+    nextActionPlan: '제품 소개 자료 발송',
+    nextActionDate: '2025-01-19',
+    history: [
+      { id: 'h1', date: '2025-01-17', content: '첫 컨택 - 홈페이지 유입', author: '이태규' }
+    ],
+    isLeanTarget: false,
+    hasManagementSession: false,
+    usesSooMembers: false,
+    hasOpeningSession: false,
+    createdAt: '2025-01-17T00:00:00.000Z',
+    updatedAt: '2025-01-17T00:00:00.000Z'
+  },
+  {
+    cid: 'clinic005',
+    clinicName: '인천 송도 한의원',
+    directorName: '정원장',
+    phone: '032-3456-7890',
+    region: '인천',
+    priority: 'C',
+    funnelStage: FUNNEL_STAGES.CONTACT,
+    assignee: '조일녕',
+    lastContactDate: '2025-01-12',
+    nextActionPlan: '팔로업 전화',
+    nextActionDate: '2025-01-21',
+    history: [
+      { id: 'h1', date: '2025-01-12', content: '콜드콜 - 관심 없음 표명, 재컨택 예정', author: '조일녕' }
+    ],
+    isLeanTarget: false,
+    hasManagementSession: false,
+    usesSooMembers: false,
+    hasOpeningSession: false,
+    createdAt: '2025-01-12T00:00:00.000Z',
+    updatedAt: '2025-01-12T00:00:00.000Z'
+  },
+  {
+    cid: 'clinic006',
+    clinicName: '광주 상무 한의원',
+    directorName: '강원장',
+    phone: '062-4567-8901',
+    region: '광주',
+    priority: 'A',
+    funnelStage: FUNNEL_STAGES.REVENUE,
+    assignee: '나종언',
+    lastContactDate: '2025-01-14',
+    nextActionPlan: '추가 서비스 제안',
+    nextActionDate: '2025-01-28',
+    history: [
+      { id: 'h1', date: '2024-08-01', content: '첫 컨택', author: '나종언' },
+      { id: 'h2', date: '2024-09-15', content: '원탕 계약', author: '나종언' },
+      { id: 'h3', date: '2024-10-20', content: '린다이어트 계약', author: '나종언' },
+      { id: 'h4', date: '2024-11-01', content: '매출 시작 - 300만원', author: '나종언' },
+      { id: 'h5', date: '2025-01-14', content: '월 매출 800만원 달성', author: '나종언' }
+    ],
+    isLeanTarget: true,
+    hasManagementSession: true,
+    usesSooMembers: true,
+    hasOpeningSession: true,
+    createdAt: '2024-08-01T00:00:00.000Z',
+    updatedAt: '2025-01-14T00:00:00.000Z'
+  },
+  {
+    cid: 'clinic007',
+    clinicName: '대전 둔산 한의원',
+    directorName: '윤원장',
+    phone: '042-5678-9012',
+    region: '대전',
+    priority: 'B',
+    funnelStage: FUNNEL_STAGES.WONTANG_CONTRACT,
+    assignee: '이태규',
+    lastContactDate: '2025-01-16',
+    nextActionPlan: '린다이어트 데모 시연',
+    nextActionDate: '2025-01-23',
+    history: [
+      { id: 'h1', date: '2024-12-15', content: '첫 컨택 - 세미나 참석', author: '이태규' },
+      { id: 'h2', date: '2025-01-08', content: '원탕 계약 완료', author: '이태규' }
+    ],
+    isLeanTarget: true,
+    hasManagementSession: false,
+    usesSooMembers: false,
+    hasOpeningSession: false,
+    createdAt: '2024-12-15T00:00:00.000Z',
+    updatedAt: '2025-01-16T00:00:00.000Z'
+  },
+  {
+    cid: 'clinic008',
+    clinicName: '경기 분당 한의원',
+    directorName: '임원장',
+    phone: '031-6789-0123',
+    region: '경기',
+    priority: 'A',
+    funnelStage: FUNNEL_STAGES.LEANDIET_CONTRACT,
+    assignee: '조일녕',
+    lastContactDate: '2025-01-19',
+    nextActionPlan: '시스템 셋업 진행',
+    nextActionDate: '2025-01-24',
+    history: [
+      { id: 'h1', date: '2024-10-20', content: '첫 컨택', author: '조일녕' },
+      { id: 'h2', date: '2024-11-25', content: '원탕 계약', author: '조일녕' },
+      { id: 'h3', date: '2025-01-19', content: '린다이어트 계약 완료!', author: '조일녕' }
+    ],
+    isLeanTarget: true,
+    hasManagementSession: true,
+    usesSooMembers: true,
+    hasOpeningSession: false,
+    createdAt: '2024-10-20T00:00:00.000Z',
+    updatedAt: '2025-01-19T00:00:00.000Z'
+  },
+  {
+    cid: 'clinic009',
+    clinicName: '울산 남구 한의원',
+    directorName: '한원장',
+    phone: '052-7890-1234',
+    region: '울산',
+    priority: 'C',
+    funnelStage: FUNNEL_STAGES.CONTACT,
+    assignee: '나종언',
+    lastContactDate: '2025-01-11',
+    nextActionPlan: '이메일 자료 발송',
+    nextActionDate: '2025-01-18',
+    history: [
+      { id: 'h1', date: '2025-01-11', content: '첫 컨택 - SNS 광고 유입', author: '나종언' }
+    ],
+    isLeanTarget: false,
+    hasManagementSession: false,
+    usesSooMembers: false,
+    hasOpeningSession: false,
+    createdAt: '2025-01-11T00:00:00.000Z',
+    updatedAt: '2025-01-11T00:00:00.000Z'
+  },
+  {
+    cid: 'clinic010',
+    clinicName: '제주 연동 한의원',
+    directorName: '오원장',
+    phone: '064-8901-2345',
+    region: '제주',
+    priority: 'D',
+    funnelStage: FUNNEL_STAGES.CONTACT,
+    assignee: '이태규',
+    lastContactDate: '2025-01-08',
+    nextActionPlan: '재컨택 예정',
+    nextActionDate: '2025-02-01',
+    history: [
+      { id: 'h1', date: '2025-01-08', content: '첫 컨택 - 시기상조, 2월 재연락 요청', author: '이태규' }
+    ],
+    isLeanTarget: false,
+    hasManagementSession: false,
+    usesSooMembers: false,
+    hasOpeningSession: false,
+    createdAt: '2025-01-08T00:00:00.000Z',
+    updatedAt: '2025-01-08T00:00:00.000Z'
+  }
+];

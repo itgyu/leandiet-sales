@@ -4,8 +4,8 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-// 로컬 개발 환경에서는 localhost 사용
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3001';
+// 프로덕션에서는 상대 경로, 개발에서는 localhost 사용
+const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 export const useAuthStore = create(
   devtools(
