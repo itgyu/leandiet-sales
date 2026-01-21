@@ -33,7 +33,7 @@ const users = [
   }
 ];
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   // CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -48,7 +48,13 @@ export default function handler(req, res) {
   }
 
   try {
-    const { email, password } = req.body;
+    // Parse body if it's a string
+    let body = req.body;
+    if (typeof body === 'string') {
+      body = JSON.parse(body);
+    }
+
+    const { email, password } = body || {};
 
     if (!email || !password) {
       return res.status(400).json({ message: '이메일과 비밀번호를 입력해주세요.' });
@@ -70,7 +76,7 @@ export default function handler(req, res) {
       { expiresIn: '24h' }
     );
 
-    res.json({
+    return res.status(200).json({
       token,
       user: {
         id: user.id,
@@ -81,6 +87,6 @@ export default function handler(req, res) {
     });
   } catch (error) {
     console.error('Login error:', error);
-    res.status(500).json({ message: '서버 오류가 발생했습니다.' });
+    return res.status(500).json({ message: '서버 오류가 발생했습니다.', error: error.message });
   }
 }
